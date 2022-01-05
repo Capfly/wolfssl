@@ -369,6 +369,8 @@
 
 #if defined(WOLFSSL_CONTIKI)
     #include <contiki.h>
+    #include <contiki-net.h>
+    typedef unsigned int   word32;
     #define WOLFSSL_UIP
     #define NO_WOLFSSL_MEMORY
     #define NO_WRITEV
@@ -377,10 +379,12 @@
     #define NO_FILESYSTEM
     #define CUSTOM_RAND_TYPE uint16_t
     #define CUSTOM_RAND_GENERATE random_rand
+    /*
     static inline word32 LowResTimer(void)
     {
         return clock_seconds();
     }
+    */
 #endif
 
 #if defined(WOLFSSL_IAR_ARM) || defined(WOLFSSL_ROWLEY_ARM)
